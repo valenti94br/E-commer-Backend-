@@ -5,16 +5,15 @@
 El objetivo del proyecto era crear un backend para una tienda on-line ficticia utilizando Node.js, Express, MySQL y Sequelize. Todo ello usando una APIs REST.
 
 
-*Tabla de contenidos*
+**Tabla de contenidos**
 
 - Objetivos
 - Diagrama y Arquitectura
-- Seeders
 - Tecnología
 - Autor
 
 
-*Objetivos* 🎯
+**Objetivos** 🎯
 
 Para completar el ejercicio se debía incluir:
 
@@ -30,38 +29,37 @@ Realizar validación de datos.
 5. Utilizar sembradores para crear datos.
 
 
-*Diagrama y Arquitectura*
-
+**Diagrama y Arquitectura**
 El proyecto parte del siguiente diagrama visual creado en MySQL Workbench
 
 ![Diagrama de la base de datos](../Diagrama/Captura%20Diagrama%20del%20e-commerce.png)
 
 Para llevarla a cabo, he aplicado la siguiente estructura de carpetas y archivos 
 
-1. Carpetas
+1. *Carpetas*
 
-- *CONFIG* 
-- *CONTROLLERS*
-- *MIDDLEWARE*
-- *MIGRATIONS*
-- *MODELS*
-- *NODE_MODULES*
-- *ROUTES*
-- *SEEDERS*
+- CONFIG
+- CONTROLLERS
+- MIDDLEWARE
+- MIGRATIONS
+- MODELS
+- NODE_MODULES
+- ROUTES
+- SEEDERS
 
-2. Documentos 
+2. *Documentos* 
 
-- *index.js 
-- *package-lock.json*
-- *package.json*
-- *.gitignore*
+- index.js 
+- package-lock.json
+- package.json
+- .gitignore
 
-Construido con 🛠️
+**Construido con** 🛠️
 Sequelize
 Mysql
 Express
 Postman
 Visual Studio Code
 
-Autor ✒️
+**Autor** ✒️
 Valentí Barat
