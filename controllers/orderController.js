@@ -21,7 +21,7 @@ const orderController = {
                   orderId: req.params.orderId
                 }
               })
-            res.send({msg:'Pedido en pantalla',orderAndProducts})
+            res.send({msg:'Pedidos en pantalla',orderAndProducts})
         } catch (error) {
             res.status(500).send(error);
         }

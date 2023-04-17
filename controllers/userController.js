@@ -12,7 +12,7 @@ const UserController = {
       const password = await bcrypt.hash(req.body.password, 10)
       const bodyWithPasswordHashed = { ...req.body, password }
       const user = await User.create(bodyWithPasswordHashed)
-      res.status(201).send({ msg: "Usuario creado con éxito", user });
+      res.status(201).send({ msg: "Usuario creado", user });
     } catch (error) {
       console.error(error);
       res.send(error)
@@ -59,7 +59,7 @@ const UserController = {
           }]
         }]
       })
-      res.send({ msg: 'mostrando todo correctamente', userOrders })
+      res.send({ msg: 'Mostrando todo correctamente', userOrders })
     } catch (error) {
       res.status(500).send(error);
     }
@@ -74,12 +74,12 @@ const UserController = {
           ],
         },
       });
-      res.send({ message: "Desconectado con éxito" });
+      res.send({ message: "Desconectado" });
     } catch (error) {
       console.log(error);
       res
         .status(500)
-        .send({ message: "hubo un problema al tratar de desconectarte" });
+        .send({ message: "Sucedió un erro al tratar de desconectarse" });
     }
   },
 }
