@@ -5,9 +5,9 @@ const categoryController = {
     async createCategory(req, res) {
         try {
             const newCategory = await Category.create(req.body); // Creamos una nueva categoría con los datos del cuerpo de la solicitud
-            res.status(201).send({ msg: "Categoría creada con éxito", newCategory }); // Enviamos una respuesta exitosa con la nueva categoría creada
+            res.status(201).send({ msg: "Categoría creada", newCategory }); // Enviamos una respuesta exitosa con la nueva categoría creada
         } catch (error) {
-            res.status(500).send(error); // Enviamos una respuesta de error con el error capturado
+            res.status(500).send(error); // Si casca, nos avisa de que todo mal
         }
     },
 
@@ -20,7 +20,7 @@ const categoryController = {
             });
             res.send({ msg: "Categoría actualizada con éxito", categoryUpdated }); // Enviamos una respuesta exitosa con la categoría actualizada
         } catch (error) {
-            res.status(500).send(error); // Enviamos una respuesta de error con el error capturado
+            res.status(500).send(error); // Si casca, nos avisa de que todo mal
         }
     },
 
@@ -33,7 +33,7 @@ const categoryController = {
             });
             res.send({ msg: 'Categoría borrada correctamente' }); // Enviamos una respuesta exitosa indicando que la categoría fue borrada correctamente
         } catch (error) {
-            res.status(500).send(error); // Enviamos una respuesta de error con el error capturado
+            res.status(500).send(error); // Si casca, nos avisa de que todo mal
         }
     },
 
@@ -44,7 +44,7 @@ const categoryController = {
             });
             res.send({ msg: 'Mostrando categoría con sus productos', categoryWithProducts }); // Enviamos una respuesta exitosa con las categorías y sus productos
         } catch (error) {
-            res.status(500).send(error); // Enviamos una respuesta de error con el error capturado
+            res.status(500).send(error); // Si casca, nos avisa de que todo mal
         }
     },
 
@@ -53,7 +53,7 @@ const categoryController = {
             const getAllCategories = await Category.findAll(); // Obtenemos todas las categorías
             res.send({ msg: 'Mostrando todas las categorías', getAllCategories }); // Enviamos una respuesta exitosa con todas las categorías
         } catch (error) {
-            res.status(500).send(error); // Enviamos una respuesta de error con el error capturado
+            res.status(500).send(error); // Si casca, nos avisa de que todo mal
         }
     },
 
