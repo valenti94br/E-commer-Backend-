@@ -1,24 +1,28 @@
-const { Order, Orderproduct } = require('../models/index'); // Importamos los modelos necesarios
+const { Order, Product } = require('../models/index')
 
-const orderController = {
-    async newOrder(req, res) {
+const OrderController = {
+    async insert(req, res) {
         try {
-            const newOrder = await Order.create(req.body); // Creamos un nuevo pedido con los datos del cuerpo de la solicitud
-            newOrder.addProduct(req.body.ProductId); // Asociamos el producto al pedido usando el método addProduct generado automáticamente por Sequelize
-            res.status(201).send({ msg: "Pedido realizado con éxito", newOrder }); // Enviamos una respuesta exitosa con el nuevo pedido creado
+            const order = await Order.create(req.body)
+            order.addProduct(req.body.ProductId)
+            res.status(201).send({message: 'Order created'})
         } catch (error) {
-            res.status(500).send(error); // Enviamos una respuesta de error con el error capturado
+            console.error(error)
+            res.status(500).send(error)
         }
     },
-
-    async orderAndProducts(req, res) {
+    
+    async getAll(req, res) {
         try {
-            const orderAndProducts = await Orderproduct.findAll(req.body); // Obtenemos todos los registros de la tabla Orderproduct que coincidan con los datos del cuerpo de la solicitud
-            res.send({ msg: 'Pedido con productos mostrándose', orderAndProducts }); // Enviamos una respuesta exitosa con los registros encontrados
+            const orders = await Order.findAll({
+                include:[{model: Product, through: {attributes: ['id']}}]
+            })
+            res.send(orders)
         } catch (error) {
-            res.status(500).send(error); // Enviamos una respuesta de error con el error capturado
+            console.error(error)
+            res.status(500).send(error)
         }
     }
 }
 
-module.exports = orderController; // Exportamos el controlador para su uso en otros archivos
+module.exports = OrderController
