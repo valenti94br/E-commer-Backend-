@@ -6,7 +6,7 @@
 
 El objetivo del proyecto era crear un backend para una tienda on-line ficticia utilizando Node.js, Express, MySQL y Sequelize. Todo ello usando una APIs REST.
 
-***
+* * *
 
 
 **Tabla de contenidos**
@@ -16,6 +16,7 @@ El objetivo del proyecto era crear un backend para una tienda on-line ficticia u
 - Tecnología
 - Autor
 
+* * *
 
 **Objetivos** 🎯
 
@@ -31,6 +32,7 @@ Para completar el ejercicio se debía incluir:
 
 5. Utilizar seeders para crear datos.
 
+* * *
 
 **Diagrama y Arquitectura**
 
@@ -58,6 +60,8 @@ Para llevarla a cabo, he aplicado la siguiente estructura de carpetas y archivos
 - package.json
 - .gitignore
 
+* * *
+
 **Construido con** 🛠️
 
 - Sequelize
@@ -65,6 +69,8 @@ Para llevarla a cabo, he aplicado la siguiente estructura de carpetas y archivos
 - Express
 - Postman
 - Visual Studio Code
+
+* * *
 
 **Autor** ✒️
 
