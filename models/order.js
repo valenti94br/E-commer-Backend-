@@ -1,3 +1,4 @@
+const {User} = require('./user')
 'use strict';
 const {
   Model
@@ -5,16 +6,14 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Order extends Model {
     static associate(models) {
-      // define association here
-      Order.belongsTo(models.User)
-      Order.belongsToMany(models.Product, {
-        through: models.OrderProduct
+      Order.belongsTo(models.User),
+      Order.belongsToMany(models.Product,{
+        through:models.Orderproduct
       })
     }
   }
   Order.init({
-    UserId: DataTypes.INTEGER,
-    date: DataTypes.DATE
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Order',
