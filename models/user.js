@@ -45,15 +45,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
-    dni: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: "Por favor introduce tu dni",
-        },
-      },
-    }
+
   }, {
     sequelize,
     modelName: 'User',
