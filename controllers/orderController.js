@@ -1,28 +1,31 @@
-const { Order, Product } = require('../models/index')
+const { Order,Orderproduct  } = require('../models/index')
 
-const OrderController = {
-    async insert(req, res) {
+const orderController = {
+    async newOrder(req, res) {
         try {
-            const order = await Order.create(req.body)
-            order.addProduct(req.body.ProductId)
-            res.status(201).send({message: 'Order created'})
+            const newOrder = await Order.create(req.body)
+            newOrder.addProduct(req.body.ProductId)
+            res.status(201).send({ msg: "Pedido Completado", newOrder });
         } catch (error) {
-            console.error(error)
-            res.status(500).send(error)
+            res.status(500).send(error);
         }
     },
-    
-    async getAll(req, res) {
+     async orderAndProducts(req,res){
         try {
-            const orders = await Order.findAll({
-                include:[{model: Product, through: {attributes: ['id']}}]
-            })
-            res.send(orders)
+            const orderAndProducts = await Order.findAll({
+                include: {
+                  model: Product,
+                  attributes: ['id', 'name', 'price']
+                },
+                where: {
+                  orderId: req.params.orderId
+                }
+              })
+            res.send({msg:'Pedido en pantalla',orderAndProducts})
         } catch (error) {
-            console.error(error)
-            res.status(500).send(error)
+            res.status(500).send(error);
         }
     }
 }
 
-module.exports = OrderController
+module.exports=orderController

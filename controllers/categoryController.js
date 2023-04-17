@@ -1,73 +1,81 @@
-const { Category, Product, Sequelize } = require('../models/index'); // Importamos los modelos necesarios y Sequelize
-const { Op } = Sequelize; // Extraemos el operador de Sequelize para su uso
-
+const { Category,Product,Sequelize} = require('../models/index')
+const {Op}=Sequelize
 const categoryController = {
     async createCategory(req, res) {
         try {
-            const newCategory = await Category.create(req.body); // Creamos una nueva categoría con los datos del cuerpo de la solicitud
-            res.status(201).send({ msg: "Categoría creada", newCategory }); // Enviamos una respuesta exitosa con la nueva categoría creada
+            const newCategory = await Category.create(req.body)
+            res.status(201).send({ msg: "Producto creado con éxito", newCategory });
         } catch (error) {
-            res.status(500).send(error); // Si casca, nos avisa de que todo mal
+            res.status(500).send(error);
         }
     },
-
     async updateCategory(req, res) {
         try {
             const categoryUpdated = await Category.update(req.body, {
                 where: {
-                    id: req.params.id // Actualizamos la categoría con el ID proporcionado en los parámetros de la solicitud
+                    id: req.params.id
                 }
-            });
-            res.send({ msg: "Categoría actualizada con éxito", categoryUpdated }); // Enviamos una respuesta exitosa con la categoría actualizada
+            })
+            res.send("Categoria actualizado con éxito",categoryUpdated);
         } catch (error) {
-            res.status(500).send(error); // Si casca, nos avisa de que todo mal
+            res.status(500).send(error);
         }
     },
-
-    async deleteCategory(req, res) {
+    async deleteCategory(req,res){
         try {
-            await Category.destroy({
-                where: {
-                    id: req.params.id // Borramos la categoría con el ID proporcionado en los parámetros de la solicitud
+            Category.destroy(req.body,{
+                where:{
+                    id:req.parms.id
                 }
-            });
-            res.send({ msg: 'Categoría borrada correctamente' }); // Enviamos una respuesta exitosa indicando que la categoría fue borrada correctamente
+            })
+            res.send({msg:'Categoria borrada correctamente'})
         } catch (error) {
-            res.status(500).send(error); // Si casca, nos avisa de que todo mal
+            res.status(500).send(error);
         }
     },
-
-    async categoryWithProducts(req, res) {
+    async categoryWithProducts(req,res){
         try {
             const categoryWithProducts = await Category.findAll({
-                include: [{ model: Product, attributes: ['name'] }] // Obtenemos todas las categorías con sus productos, incluyendo solo el atributo 'name' del modelo de Producto
-            });
-            res.send({ msg: 'Mostrando categoría con sus productos', categoryWithProducts }); // Enviamos una respuesta exitosa con las categorías y sus productos
+                include:[{model:Product,attribute:['name']}]
+            })
+            res.send({msg:'Mostrando categoria con sus productos',categoryWithProducts})
         } catch (error) {
-            res.status(500).send(error); // Si casca, nos avisa de que todo mal
+            res.status(500).send(error);
         }
-    },
-
-    async getAllCategories(req, res) {
+    },async getAllCategories(req, res) {
         try {
-            const getAllCategories = await Category.findAll(); // Obtenemos todas las categorías
-            res.send({ msg: 'Mostrando todas las categorías', getAllCategories }); // Enviamos una respuesta exitosa con todas las categorías
+            const getAllCategories = Category.get(req.body)
+            res.send({ msg: 'mostrando todas las categorias', getAllCategories })
         } catch (error) {
-            res.status(500).send(error); // Si casca, nos avisa de que todo mal
+            res.status(500).send(error);
         }
-    },
 
-    async categoryById(req, res) {
+    },
+    async categoryById(req,res){
         try {
             const catById = await Category.findOne({
-                where: {
-                    id: req.params.id // Obtenemos una categoría por su ID proporcionado en los parámetros de la solicitud
+                where:{
+                    id:req.params.id
                 }
-            });
-            res.send({ msg: 'Categoría mostrada correctamente', catById }); // Enviamos una respuesta exitosa con la categoría encontrada
+            })
+            res.send({msg:'Categoria mostrandose correctamente',catById})
         } catch (error) {
-            res.status(500).send(error); // Enviamos
+            res.status(500).send(error);
         }
-    }
-};
-module.exports = categoryController;
+    },
+    async categoryByName(req,res){
+        try {
+            const catByName = await Category.findOne({
+                where:{
+                    name:{
+                        [Op.like]: `%${req.params.name}%`
+                    }
+                }
+            })
+            res.send({msg:'Categoria mostrandose correctamente',catByName})
+        
+        } catch (error) {
+            res.status(500).send(error);
+        }
+}}
+module.exports = categoryController
