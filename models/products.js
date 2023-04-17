@@ -5,12 +5,10 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     static associate(models) {
-      // define association here
-      Product.hasMany(models.Review)
-      Product.belongsTo(models.Category)
-      Product.belongsToMany(models.Order, {
-        through: models.OrderProduct
-      })
+    Product.belongsTo(models.Category),
+    Product.belongsToMany(models.Order,{
+      through:models.Orderproduct
+    })
     }
   }
   Product.init({
