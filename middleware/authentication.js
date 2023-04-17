@@ -22,7 +22,7 @@ const authentication = async (req, res, next) => {
         next();
     } catch (error) {
         console.log(error)
-        res.status(500).send({ error, message: 'Ha habido un problema con el token' })
+        res.status(500).send({ error, message: 'Ha ocurrido un error' })
     }
 }
 module.exports = { authentication }
