@@ -10,13 +10,31 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            message: 'Introduce product name'
+          }
+        }
       },
       price: {
-        type: Sequelize.INTEGER
+        type: Sequelize.NUMERIC(10, 2),
+        allowNull: false,
+        validate: {
+          notNull: {
+            message: 'Introduce product price'
+          }
+        }
       },
-      CategoryId:{
-        type:Sequelize.INTEGER
+      CategoryId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            message: 'Introduce product category ID'
+          }
+        }
       },
       createdAt: {
         allowNull: false,
