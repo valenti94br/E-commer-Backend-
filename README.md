@@ -1,4 +1,6 @@
-**Proyecto de backend para un e-commerce** 🖥️
+**PROYECTO E-COMMERCE BACKEND** 🖥️
+
+* * *
 
 *Descripción*📋
 
@@ -36,7 +38,7 @@ El proyecto parte del siguiente diagrama visual creado en MySQL Workbench
 
 Para llevarla a cabo, he aplicado la siguiente estructura de carpetas y archivos 
 
-1. *Carpetas*
+1. *Carpetas* 📁
 
 - CONFIG
 - CONTROLLERS
@@ -47,7 +49,7 @@ Para llevarla a cabo, he aplicado la siguiente estructura de carpetas y archivos
 - ROUTES
 - SEEDERS
 
-2. *Documentos* 
+2. *Documentos* 📜
 
 - index.js 
 - package-lock.json
