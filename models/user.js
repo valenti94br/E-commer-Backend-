@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         notNull: {
-          msg: "Por favor introduce tu nombre",
+          msg: "Introduzcca su nombre",
         },
       },
     } ,
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         notNull: {
-          msg: "Por favor introduce tu email",
+          msg: "Introduzcca su email",
         },
       },
     },
@@ -32,16 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         notNull: {
-          msg: "Por favor introduce tu contraseña",
-        },
-      },
-    },
-    role:  {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: "Por favor introduce tu role",
+          msg: "Introduzca su contraseña",
         },
       },
     },
