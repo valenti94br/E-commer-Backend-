@@ -17,16 +17,15 @@ El objetivo del proyecto era crear un backend para una tienda on-line ficticia u
 
 Para completar el ejercicio se debía incluir:
 
-1. Crear al menos cuatro tablas con asociaciones uno a muchos y muchos a muchos (Usuarios, Productos, Categorías, Pedidos) y proporcionar un diagrama para visualizar las relaciones.
+1. Implementar registro de usuarios y encriptación de contraseñas utilizando Bcrypt.
 
-2. Implementar registro de usuarios y encriptación de contraseñas utilizando Bcrypt.
+2. Habilitar inicio de sesión con tokens JSON Web y el uso de middleware.
 
-3. Habilitar inicio de sesión con tokens JSON Web y el uso de middleware.
+3.  Crear una variedad de puntos finales CRUD.
 
-4. Crear una variedad de puntos finales CRUD.
-Realizar validación de datos.
+4. Crear al menos cuatro tablas con asociaciones uno a muchos y muchos a muchos (Usuarios, Productos, Categorías, Pedidos) y proporcionar un diagrama para visualizar las relaciones.
 
-5. Utilizar sembradores para crear datos.
+5. Utilizar seeders para crear datos.
 
 
 **Diagrama y Arquitectura**
