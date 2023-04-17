@@ -29,6 +29,7 @@ Para completar el ejercicio se debía incluir:
 
 
 **Diagrama y Arquitectura**
+
 El proyecto parte del siguiente diagrama visual creado en MySQL Workbench
 
 ![Diagrama de la base de datos](../Diagrama/Captura%20Diagrama%20del%20e-commerce.png)
