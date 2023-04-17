@@ -4,7 +4,7 @@ const categoryController = {
     async createCategory(req, res) {
         try {
             const newCategory = await Category.create(req.body)
-            res.status(201).send({ msg: "Producto creado con éxito", newCategory });
+            res.status(201).send({ msg: "Producto creado", newCategory });
         } catch (error) {
             res.status(500).send(error);
         }
@@ -16,7 +16,7 @@ const categoryController = {
                     id: req.params.id
                 }
             })
-            res.send("Categoria actualizado con éxito",categoryUpdated);
+            res.send("Categoria actualizada",categoryUpdated);
         } catch (error) {
             res.status(500).send(error);
         }
@@ -28,7 +28,7 @@ const categoryController = {
                     id:req.parms.id
                 }
             })
-            res.send({msg:'Categoria borrada correctamente'})
+            res.send({msg:'Categoria eliminada'})
         } catch (error) {
             res.status(500).send(error);
         }
@@ -38,7 +38,7 @@ const categoryController = {
             const categoryWithProducts = await Category.findAll({
                 include:[{model:Product,attribute:['name']}]
             })
-            res.send({msg:'Mostrando categoria con sus productos',categoryWithProducts})
+            res.send({msg:'Mostrando categoria con productos',categoryWithProducts})
         } catch (error) {
             res.status(500).send(error);
         }
@@ -58,7 +58,7 @@ const categoryController = {
                     id:req.params.id
                 }
             })
-            res.send({msg:'Categoria mostrandose correctamente',catById})
+            res.send({msg:'Mostrando categoria',catById})
         } catch (error) {
             res.status(500).send(error);
         }
@@ -72,7 +72,7 @@ const categoryController = {
                     }
                 }
             })
-            res.send({msg:'Categoria mostrandose correctamente',catByName})
+            res.send({msg:'Mostrando categoria por nombre',catByName})
         
         } catch (error) {
             res.status(500).send(error);
