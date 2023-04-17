@@ -15,7 +15,7 @@ module.exports = {
       {
         price:65,
         name:'Pokémon Escarlata',
-        CategoryId:3,
+        CategoryId:2,
         updatedAt:new Date(),
         createdAt:new Date()
       },
@@ -36,7 +36,7 @@ module.exports = {
       {
         price:15,
         name:'Boomerang War',
-        CategoryId:2,
+        CategoryId:3,
         updatedAt:new Date(),
         createdAt:new Date()
       }
