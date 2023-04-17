@@ -15,28 +15,28 @@ module.exports = {
       {
         price:65,
         name:'Pokémon Escarlata',
-        CategoryId:2,
+        CategoryId:1,
         updatedAt:new Date(),
         createdAt:new Date()
       },
       {
         price:50,
         name:'Mario Galaxy',
-        CategoryId:2,
+        CategoryId:1,
         updatedAt:new Date(),
         createdAt:new Date()
       },
       {
         price:30,
         name:'Hollow Kinght',
-        CategoryId:3,
+        CategoryId:2,
         updatedAt:new Date(),
         createdAt:new Date()
       },
       {
         price:15,
-        name:'Boomerang War',
-        CategoryId:3,
+        name:'Boomerang Wars',
+        CategoryId:2,
         updatedAt:new Date(),
         createdAt:new Date()
       }
