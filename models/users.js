@@ -57,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
     confirmed: DataTypes.BOOLEAN  
   }, {
     sequelize,
-    modelName: 'Usuario',
+    modelName: 'User',
   });
   return User;
 };
