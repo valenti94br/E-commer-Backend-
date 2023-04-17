@@ -55,11 +55,13 @@ Para llevarla a cabo, he aplicado la siguiente estructura de carpetas y archivos
 - .gitignore
 
 **Construido con** 🛠️
-Sequelize
-Mysql
-Express
-Postman
-Visual Studio Code
+
+- Sequelize
+- Mysql
+- Express
+- Postman
+- Visual Studio Code
 
 **Autor** ✒️
-Valentí Barat
+
+- Valentí Barat
