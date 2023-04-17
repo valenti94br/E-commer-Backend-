@@ -39,23 +39,7 @@ El proyecto parte del siguiente diagrama visual creado en MySQL Workbench
 
 Para llevarla a cabo, he aplicado la siguiente estructura de carpetas y archivos 
 
-1. *Carpetas* 📁
-
-- CONFIG
-- CONTROLLERS
-- MIDDLEWARE
-- MIGRATIONS
-- MODELS
-- NODE_MODULES
-- ROUTES
-- SEEDERS
-
-2. *Documentos* 📜
-
-- index.js 
-- package-lock.json
-- package.json
-- .gitignore
+![organización de las carpetas](/media/Organizaci%C3%B3n.png)
 
 * * *
 
