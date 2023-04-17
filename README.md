@@ -37,7 +37,7 @@ El proyecto parte del siguiente diagrama visual creado en MySQL Workbench
 
 ![Diagrama de la base de datos](/media/Diagrama.png)
 
-Para llevarla a cabo, he aplicado la siguiente estructura de carpetas y archivos 
+Para llevarla a cabo, he aplicado la siguiente estructura de carpetas y archivos:
 
 ![organización de las carpetas](/media/Organizaci%C3%B3n.png)
 
