@@ -6,6 +6,8 @@
 
 El objetivo del proyecto era crear un backend para una tienda on-line ficticia utilizando Node.js, Express, MySQL y Sequelize. Todo ello usando una APIs REST.
 
+***
+
 
 **Tabla de contenidos**
 
