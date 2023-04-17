@@ -1,13 +1,14 @@
 **Proyecto de backend para un e-commerce** 🖥️
 
-*Descripción* 📜
+*Descripción*📋
 
-El objetivo del proyecto era crear un backend para una tienda on-line imaginaria utilizando Node.js, Express, MySQL y Sequelize. Todo ello usando una APIs REST.
+El objetivo del proyecto era crear un backend para una tienda on-line ficticia utilizando Node.js, Express, MySQL y Sequelize. Todo ello usando una APIs REST.
+
 
 *Tabla de contenidos*
 
 - Objetivos
-- Arquitectura del proyecto
+- Diagrama y Arquitectura
 - Seeders
 - Tecnología
 - Autor
@@ -35,48 +36,32 @@ El proyecto parte del siguiente diagrama visual creado en MySQL Workbench
 
 ![Diagrama de la base de datos](../Diagrama/Captura%20Diagrama%20del%20e-commerce.png)
 
-Para llevarla a cabo, he aplicado la siguiente arquitectura de carpetas:
+Para llevarla a cabo, he aplicado la siguiente estructura de carpetas y archivos 
 
-- *CONFIG* 📁
+1. Carpetas
 
-Define la base de datos en el entorno de desarrollo, así como la contraseña para autenticar tokens. Este archivo no se sube a GitHub; ahí se sube una plantilla de ejemplo.
+- *CONFIG* 
+- *CONTROLLERS*
+- *MIDDLEWARE*
+- *MIGRATIONS*
+- *MODELS*
+- *NODE_MODULES*
+- *ROUTES*
+- *SEEDERS*
 
-- *CONTROLLERS* 📁
+2. Documentos 
 
-Código para diferentes puntos finales CRUD para interactuar con la base de datos. Cada tabla tiene su propio archivo.
+- *index.js 
+- *package-lock.json*
+- *package.json*
+- *.gitignore*
 
-- *MIDDLEWARE* 📁
+Construido con 🛠️
+Sequelize
+Mysql
+Express
+Postman
+Visual Studio Code
 
-Métodos de autenticación para verificar si un usuario ha iniciado sesión o es un administrador. Estas verificaciones son necesarias para definir las acciones que el usuario puede realizar en la base de datos.
-
-- *MIGRATIONS* 📁
-
-Las migraciones son un registro de cambios en la base de datos. Aquí se pueden definir las columnas de las tablas y sus propiedades antes de realizar la migración, es decir, crear o modificar una tabla.
-
-- *MODELS* 📁
-
-Los modelos guardan la estructura de las tablas. Como los métodos de los puntos finales hacen referencia a estos modelos, las asociaciones de las tablas, las propiedades y las validaciones.
-
-- *NODE_MODULES* 📁
-
-Nodemodules es una carpeta creada automáticamente por Node JS y es donde se almacenan los paquetes. Esto va también en el .gitignore
-
-- *ROUTES* 📁
-
-Las rutas definen el método CRUD y la URL para realizar acciones con la base de datos.
-
-- *SEEDERS* 📁
-
-Los seeders se utilizan para crear datos a granel en la base de datos con fines de prueba.
-
-- *index.js*
-
-Este es el archivo que maneja el servidor local.
-
-- *package-lock.json y package.json*
-
-Aquí se enumeran las dependencias.
-
-*.gitignore*
-
-Es el archivo que evita que se suba a GitHub la información sensible.
+Autor ✒️
+Valentí Barat
