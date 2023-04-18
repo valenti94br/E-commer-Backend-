@@ -22,9 +22,6 @@ module.exports = {
       role: {
         type: Sequelize.STRING
       },
-      dni: {
-        type: Sequelize.STRING
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
