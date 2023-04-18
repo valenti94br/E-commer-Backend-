@@ -1,14 +1,15 @@
 {
-  "name": "nodeksapi",
+  "name": "proyecto-pascua",
   "version": "1.0.0",
+  "description": "**PROYECTO E-COMMERCE BACKEND** 🖥️",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
@@ -17,7 +18,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
-  },
-  "keywords": [],
-  "description": "**Proyecto de backend para un e-commerce** 🖥️"
+  }
 }
