@@ -5,6 +5,7 @@ const ProductController = {
     //endpoint para crear producto nuevo
     async createProduct(req, res) {
         try {
+            console.log(req.body)
             const newProduct = await Product.create(req.body)
             res.status(201).send({ msg: "Producto creado", newProduct });
         } catch (error) {
