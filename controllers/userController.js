@@ -82,5 +82,25 @@ const UserController = {
         .send({ message: "Sucedió un erro al tratar de desconectarse" });
     }
   },
+
+  async getUserInfo(req, res) {
+    try {
+      const user = await User.findOne({
+        where: {
+          id: req.user.id,
+        },
+      });
+  
+      if (!user) {
+        return res.status(404).send({ message: "Usuario no encontrado" });
+      }
+  
+      res.send({ user });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({ message: "Ocurrió un error al intentar obtener la información del usuario" });
+    }
+  },
+  
 }
 module.exports = UserController
