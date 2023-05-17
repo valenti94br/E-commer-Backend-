@@ -1,4 +1,4 @@
-const { User, Token, Sequelize, Orderproduct, Order } = require('../models/index')
+const { User, Token, Sequelize, Product, Order } = require('../models/index')
 const { Op } = Sequelize
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -89,7 +89,14 @@ const UserController = {
         where: {
           id: req.user.id,
         },
-      });
+        include:[{
+          model:Order,
+          include:[{
+            model:Product,
+            through:{attributes:[]}
+          }]
+        }]
+      })
   
       if (!user) {
         return res.status(404).send({ message: "Usuario no encontrado" });
